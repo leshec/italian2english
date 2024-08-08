@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <div id="word-pair">
+
+  {% include 'word_pair.html' %}
+
+  </div>
+  
+  <button onclick="revealAnswer()">Reveal</button>
+
+  <button hx-get="/word-pair" hx-target="#word-pair"> Next word pair </button>
+
+ <script> 
+  function revealAnswer() {
+    document.getElementById("english").style.visibility = "visible";
+  }
+  </script>
+  
+
+{% endblock %}
+

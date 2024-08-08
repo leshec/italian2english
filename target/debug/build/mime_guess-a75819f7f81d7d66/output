@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/Users/richard/italian2english/target/debug/build/mime_guess-a75819f7f81d7d66/out/mime_types_generated.rs
