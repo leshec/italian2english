@@ -1,10 +1,9 @@
 mod words;
-
+use axum::routing::get;
 use axum::Router;
 use axum::{
     http::StatusCode,
     response::{Html, IntoResponse},
-    routing::get,
 };
 use lazy_static::lazy_static;
 use tera::Tera;
@@ -57,24 +56,12 @@ async fn word_pair_endpoint() -> Html<String> {
 async fn main() -> shuttle_axum::ShuttleAxum {
     // build our application with a route
 
-    let app = Router::new()
+    let router = Router::new()
         .route("/", get(index))
         .route("/info", get(info))
         .route("/word-pair", get(word_pair_endpoint))
         .route("/words", get(words_endpoint))
-        .layer(tower_livereload::LiveReloadLayer::new());
-
-    // add a fallback service for handling routes to unknown paths
-
-    let app = app.fallback(handler_404);
-
-    // run our app with hyper, listening globally on port 3000
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:10000")
-        .await
-        .unwrap();
-    axum::serve(listener, app).await.unwrap();
-
-    let router = Router::new().nest_service("/", ServeDir::new("image"));
+        .nest_service("/favicon.ico", ServeDir::new("image/favicon.ico"));
 
     Ok(router.into())
 }

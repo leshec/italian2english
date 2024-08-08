@@ -873,7 +873,6 @@ dependencies = [
  "tokio",
  "tower",
  "tower-http",
- "tower-livereload",
 ]
 
 [[package]]
@@ -1995,20 +1994,6 @@ name = "tower-layer"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c20c8dbed6283a09604c3e69b4b7eeb54e298b8a600d4d5ecb5ad39de609f1d0"
-
-[[package]]
-name = "tower-livereload"
-version = "0.9.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57d7d9fecf1242d1c6a3cf8f7f3c2da94e6aac553bb7062ab6d03e16b9872fd0"
-dependencies = [
- "bytes",
- "http 1.1.0",
- "http-body 1.0.1",
- "pin-project-lite",
- "tokio",
- "tower",
-]
 
 [[package]]
 name = "tower-service"
