@@ -2,9 +2,9 @@ mod words;
 
 use axum::Router;
 use axum::{
-    http::{header, Response, StatusCode},
+    http::StatusCode,
     response::{Html, IntoResponse},
-    routing::{get, post},
+    routing::get,
 };
 use lazy_static::lazy_static;
 use tera::Tera;
