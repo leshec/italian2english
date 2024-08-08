@@ -23,6 +23,7 @@
 - Web server: Rust with axum (https://github.com/tokio-rs/axum) 
 - HTML templating engine: tera (https://docs.rs/tera/latest/tera)
 - Basic styling: missing.style (https://missing.style/)
+- HTMX (https://htmx.org/)
 - Hotreloading: cargo-watch (https://github.com/watchexec/cargo-watch)
 - deployed via shuttle.rs, fairly easily 
 
